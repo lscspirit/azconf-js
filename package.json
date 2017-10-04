@@ -1,0 +1,22 @@
+{
+  "name": "azconf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lscspirit/azconf-js.git"
+  },
+  "author": "Derrick Yeung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lscspirit/azconf-js/issues"
+  },
+  "homepage": "https://github.com/lscspirit/azconf-js#readme",
+  "devDependencies": {
+    "eslint": "^4.8.0"
+  }
+}
