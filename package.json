@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test":  "mocha --recursive --require babel-register --require spec/spec_helper.js spec/**/*_spec.js",
+    "mocha": "mocha --require babel-register --require spec/spec_helper.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,23 @@
   },
   "homepage": "https://github.com/lscspirit/azconf-js#readme",
   "devDependencies": {
-    "eslint": "^4.8.0"
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
+    "chance": "^1.0.11",
+    "eslint": "^4.8.0",
+    "factory-girl": "^5.0.0-beta.1",
+    "mocha": "^4.0.1",
+    "sinon-chai": "^2.14.0",
+    "tmp": "0.0.33"
+  },
+  "dependencies": {
+    "flat": "^4.0.0",
+    "glob": "^7.1.2",
+    "js-yaml": "^3.10.0",
+    "yamljs": "^0.3.0"
   }
 }
