@@ -2,8 +2,14 @@
   "name": "azconf",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/azconf.js",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
+    "build": "babel src --out-dir lib",
+    "prepublish": "npm run build",
     "test":  "mocha --recursive --require babel-register --require spec/spec_helper.js spec/**/*_spec.js",
     "mocha": "mocha --require babel-register --require spec/spec_helper.js"
   },
