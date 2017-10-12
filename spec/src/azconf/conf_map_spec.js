@@ -116,6 +116,51 @@ describe("ConfMap", function() {
   });
 
   //
+  // #entries
+  //
+
+  describe("#entries", function() {
+    describe("when there is no entry", function() {
+      beforeEach(function() {
+        this.conf_map = new ConfMap();
+      });
+
+      it("returns an array", function() {
+        expect(this.conf_map.entries).to.be.an.instanceof(Array);
+      });
+
+      it("returns an empty array", function() {
+        expect(this.conf_map.entries).to.have.lengthOf(0);
+      });
+    });
+
+    describe("when there are entries", function() {
+      beforeEach(async function() {
+        this.entries = await factory.buildMany("conf_entry", chance.integer({
+          min:3, max: 10
+        }));
+        this.conf_map = new ConfMap(this.entries);
+      });
+
+      it("returns an array", function() {
+        expect(this.conf_map.entries).to.be.an.instanceof(Array);
+      });
+
+      it("returns an array with the right number of entries", function() {
+        expect(this.conf_map.entries).to.have.lengthOf(this.entries.length);
+      });
+
+      it("returns all the entries", function() {
+        const target = this.conf_map.entries;
+        this.entries.forEach(function(e) {
+          const found = target.find(t => e.key === t.key && e.value === t.value);
+          expect(found).to.not.be.null;
+        });
+      });
+    });
+  });
+
+  //
   // #merge
   //
 
