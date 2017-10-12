@@ -13,10 +13,6 @@ describe("JSONSource", function() {
     this.json_file = tmp.fileSync();
   });
 
-  afterEach(function() {
-    if (this.json_file) this.json_file.removeCallback();
-  });
-
   describe("with single level key object", function() {
     beforeEach(function() {
       this.config_map = buildConfigObject(1, 1, [chance.integer({min: 3, max: 10})]);

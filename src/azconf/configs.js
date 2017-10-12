@@ -1,5 +1,5 @@
-import JSONSource from "./loaders/json_loader";
-import YAMLSource from "./loaders/yaml_loader";
+import JSONSource from "./sources/json_source";
+import YAMLSource from "./sources/yaml_source";
 
 export default class Configs {
   constructor() {

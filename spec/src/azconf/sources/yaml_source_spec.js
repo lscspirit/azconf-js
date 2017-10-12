@@ -14,10 +14,6 @@ describe("YAMLSource", function() {
     this.yaml_file = tmp.fileSync();
   });
 
-  afterEach(function() {
-    if (this.yaml_file) this.yaml_file.removeCallback();
-  });
-
   describe("with single level key object", function() {
     beforeEach(function() {
       this.config_map = buildConfigObject(1, 1, [chance.integer({min: 3, max: 10})]);

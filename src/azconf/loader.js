@@ -1,8 +1,8 @@
 import path from "path";
 import glob from "glob";
 
-import ConfMap from "./azconf/conf_map";
-import Source  from "./azconf/sources/base";
+import ConfMap from "./conf_map";
+import Source  from "./sources/base";
 
 export default class Loader {
   constructor(configs) {
@@ -37,7 +37,8 @@ export default class Loader {
         // assume this is a string and is a path
         // then expand the path through glob
         glob.sync(src_or_path).forEach(src_path => {
-          const ext = path.extname(src_path);
+          let ext = path.extname(src_path);
+          if (ext.length > 1) ext = ext.substring(1);
 
           // find the appropriate Source class to handle this file format
           const sourceClass = this._configs.sourceClassByExt(ext);
