@@ -1,4 +1,4 @@
-import Configs from "./azconf/config";
+import Configs from "./azconf/configs";
 import Loader  from "./azconf/loader";
 
 export class AZConf {
