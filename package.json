@@ -1,11 +1,10 @@
 {
   "name": "azconf",
   "version": "1.0.0",
-  "description": "",
+  "description": "A customizable configuration library, featuring wildcards, nesting, namespacing and local override.",
   "main": "lib/azconf.js",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "build": "babel src --out-dir lib",
