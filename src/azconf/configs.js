@@ -10,7 +10,8 @@ export default class Configs {
 
     this._source_ext = {
       json: JSONSource,
-      yml:  YAMLSource
+      yml:  YAMLSource,
+      yaml: YAMLSource
     };
   }
 
